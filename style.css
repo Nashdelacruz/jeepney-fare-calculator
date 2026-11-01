@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+:root {
+  --header-color: rgba(0, 128, 0, 0.959);
+  --primary-color: green;
+  --secondary-color: lightgreen;
+  --accent-color: rgb(255, 166, 0);
+  --text-dark: white;
+  --text-light: rgb(0, 0, 0);
+  --bg-dark: black;
+  --bg-light: white;
+  --border-color: rgb(209, 115, 0);
+
+  --option-color-disabled: rgba(255, 166, 0, 0.4);
+}
+
+/* Header */
+header {
+  display: flex;
+  background-color: var(--header-color);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  font-size: clamp(0.75rem, 1.4vw, 2rem);
+  z-index: 10;
+}
+
+.header__container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.header__container__siteTitle {
+  color: white;
+  font-weight: 900;
+}
+
+/* Section */
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--bg-light);
+  margin: auto;
+  max-width: 1440px;
+}
+
+section#route {
+  padding: 12px 16px;
+}
+
+/* Hero */
+.hero__container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(to bottom, green, orange);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero__container__title {
+  font-weight: 900;
+  font-size: clamp(1vw, 1.5rem, 3vw);
+}
+
+/* Navigation */
+nav ul > li {
+  display: inline-block;
+  margin: 0px 8px;
+}
+
+nav ul > li > a {
+  color: rgb(221, 221, 221);
+  text-decoration: none;
+  position: relative;
+  transform: color 200ms;
+  font-weight: 900;
+}
+
+nav > ul > li > a:hover {
+  color: var(--text-dark);
+}
+
+nav > ul > li > a::after {
+  transition: width 200ms;
+  content: " ";
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: block;
+}
+
+nav > ul > li > a:hover::after {
+  width: 100%;
+}
+
+/* Button Styling */
+button {
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: clamp(1rem, 1.2rem, 4rem);
+  margin-block: 8px;
+  transition: background-color 200ms;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+/* Label Styling */
+label {
+  display: block;
+  text-align: center;
+}
+
+/* Route Dashboard */
+.route__dashboard {
+  border: 1px solid var(--primary-color);
+  border-radius: 16px;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 8px 0px;
+}
+
+.route__dashboard > div {
+  flex-grow: 1;
+  margin: auto;
+}
+
+.route__dashboard__error {
+  border-radius: 16px;
+  background-color: var(--accent-color);
+  padding: 8px;
+}
+
+/* Fare Text */
+.route__result {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.route__dashboard__result > p {
+  font-weight: 700;
+  font-size: clamp(0.75rem, 1.4vw, 2rem);
+}
+
+/* Option and Select */
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  padding: 6px 4px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  outline: none;
+  min-width: 300px;
+}
+
+select:disabled {
+  cursor: not-allowed;
+  background-color: var(--option-color-disabled);
+}
+
+option {
+  padding: 12px 4px;
+  background-color: var(--secondary-color);
+  transition: background-color 50ms;
+}
+
+option:hover {
+  background-color: var(--primary-color);
+}
+
+/* Scrollbar */
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 16px;
+}
+
+/* Other style classes */
+
+.hidden {
+  display: none; 
+}
